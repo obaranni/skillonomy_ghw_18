@@ -1,9 +1,15 @@
 from django.db import models
 
+
+class Mentor(models.Model):
+    name= models.CharField(max_length=255)
+    rating = models.IntegerField(default=0,  blank=True)
+
 class Curs(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to="course/", blank=True)
+    mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
 class User(models.Model):
     name = models.CharField(max_length=255)
@@ -14,9 +20,6 @@ class User(models.Model):
     balance = models.FloatField(default=0, )
     creator = models.CharField(max_length=255, blank=True)
 
-class Mentor(models.Model):
-    name= models.CharField(max_length=255)
-    rating = models.IntegerField()
 
 
 
