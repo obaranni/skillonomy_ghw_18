@@ -9,8 +9,8 @@ def index(request):
 
 def explore_courses(request):
     curs = Curs.objects.all()
-    temp = [str(x.image)[11::] for x in curs]
-    return render(request, 'tmp/explore_courses.html', {"courses":curs})
+    curs_image = [str(x.image)[3::] for x in curs]
+    return render(request, 'tmp/explore_courses.html', {"courses": curs_image})
 
 def profile(request):
     curs = Curs.objects.all()
