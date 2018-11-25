@@ -11,4 +11,9 @@ def explore_courses(request):
     curs = Curs.objects.all()
     return render(request, 'tmp/explore_courses.html')
 
+def profile(request):
+    curs = Curs.objects.all()
+    return render(request, 'tmp/profile.html')
+
+
 
