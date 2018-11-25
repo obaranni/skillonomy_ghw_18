@@ -12,4 +12,9 @@ def explore_courses(request):
     temp = [str(x.image)[11::] for x in curs]
     return render(request, 'tmp/explore_courses.html', {"courses":curs})
 
+def profile(request):
+    curs = Curs.objects.all()
+    return render(request, 'tmp/profile.html')
+
+
 
