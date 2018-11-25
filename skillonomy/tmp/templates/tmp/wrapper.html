@@ -2,27 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wrapper title</title>
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>
+       Sign in or Register | EdEos
+      </title>
     {% load static %}
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}" type="text/css">
+  <script type="text/javascript" src="{% static 'open_edx_signin_files/bootstrap.min.css' %}"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://lms-edeos.raccoongang.com/static/base-ginkgo-stage/images/favicon.71928c500418.ico">
+    <link href="{% static 'open_edx_signin_files/lms-style-vendor.4ccaa7f84216.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'open_edx_signin_files/lms-main-v1.0ef7ab3a6e34.css' %}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{% static 'open_edx_signin_files/lms-base-vendor.cb449c35a4fc.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'open_edx_signin_files/lms-base-application.1ac3273f2db2.js' %}" charset="utf-8"></script>
+  <script>
+    window.baseUrl = "/static/";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="{% static 'open_edx_signin_files/require-config.7181341023ea.js' %}"></script>
+
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/course_home_events': 'js/courseware/course_home_events.f9fa9db95688',
+'js/dateutil_factory': 'js/dateutil_factory.7b3b05f9ea07',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.59e957d21d61',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.22ad04bb0497',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.252e3964d14f',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.34c9a13322c1',
+'js/views/message_banner': 'js/views/message_banner.099aec538f98',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.39b8b2b9e9a9',
+'js/student_profile/views/learner_profile_factory': 'js/student_profile/views/learner_profile_factory.6af6fe1cda9d',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.8ad700838f0f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">  Segment -->
+  <meta name="path_prefix" content="">
+  <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY">
+
+
 </head>
-<body style="background: dimgrey">
+<body style="background: dimgrey" class="ltr  lang_en">
     {% block content %}
     {% endblock %}
 
-    <div class="jumbotron">
-    <div class="container">
-      <h1>{% include "tmp/includes/some.html" %}</h1>
-      <p>
-        <a href="/" class="btn btn-success btn-lg">Главная страница</a>
-        <a href="/news" class="btn btn-primary btn-lg">Узнать больше &raquo;</a>
-      </p>
-    </div>
-  </div>
-  <div class="container">
-      <img src="{% static 'tmp/img/visa.png' %}">
-    <hr>
-    &copy; Все права защищены 2018
-  </div>
 </body>
 </html>
