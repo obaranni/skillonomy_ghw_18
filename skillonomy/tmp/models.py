@@ -7,8 +7,8 @@ class Mentor(models.Model):
 
 class Curs(models.Model):
     name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="tmp/img", blank=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to="tmp/static/tmp/img", blank=True)
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
 class User(models.Model):
@@ -19,11 +19,3 @@ class User(models.Model):
     curs = models.ManyToManyField(Curs)
     balance = models.FloatField(default=0, )
     creator = models.CharField(max_length=255, blank=True)
-
-
-
-
-
-
-
-# Create your models here.
