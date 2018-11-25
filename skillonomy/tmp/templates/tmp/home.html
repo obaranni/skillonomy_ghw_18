@@ -245,7 +245,7 @@
 
 
         <script type="text/template" id="account-tpl">
-            <form id="email-change-form" method="post">
+
     <label for="new-email"><%- gettext("New Address") %></label>
     <input id="new-email" type="text" name="new-email" value="" placeholder="xsy@edx.org" data-validate="required email"/>
     <div id="new-email-status" />
@@ -263,7 +263,7 @@
         <button type="button"><%- gettext("Reset Password") %></button>
     </div>
     <div id="password-reset-status" />
-</form>
+
 
         </script>
         <script type="text/template" id="access-tpl">
@@ -401,7 +401,6 @@
 
 <h2><%- gettext("Sign In") %></h2>
 
-<form id="login" class="login-form" tabindex="-1" method="POST">
 
     <p class="sr">
         <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
@@ -414,7 +413,7 @@
 
     <%= context.fields %>
 
-    <button type="submit" class="action action-primary action-update js-login login-button"><%- gettext("Sign in") %></button>
+    <button type="submit" class=""><%- gettext("Sign in") %></button>
 
     <% if ( context.providers.length > 0 && !context.currentProvider || context.hasSecondaryProviders ) { %>
     <div class="login-providers">
@@ -445,7 +444,7 @@
         <% } %>
     </div>
     <% } %>
-</form>
+
 
 
         </script>
@@ -460,7 +459,7 @@
 
 <h2><%- gettext('Create an Account')%></h2>
 
-<form id="register" class="register-form" autocomplete="off" tabindex="-1" method="POST">
+
 
     <% if (!context.currentProvider) { %>
         <% if (context.providers.length > 0 || context.hasSecondaryProviders) { %>
@@ -502,7 +501,7 @@
     <%= context.fields %>
 
     <button type="submit" class="action action-primary action-update js-register register-button"><%- gettext("Create account") %></button>
-</form>
+
 
         </script>
         <script type="text/template" id="institution_login-tpl">
@@ -579,14 +578,14 @@
 
 <h2><%- gettext("Password assistance") %></h2>
 
-<form id="password-reset" class="password-reset-form" tabindex="-1" method="POST">
+
 
     <p class="action-label"><%- gettext("Please enter your email address below and we will send you instructions for setting a new password.") %></p>
 
     <%= fields %>
 
     <button type="submit" class="action action-primary action-update js-reset"><%- gettext("Reset my password") %></button>
-</form>
+
 
         </script>
         <script type="text/template" id="hinted_login-tpl">
@@ -640,7 +639,6 @@
 
 <h2>Sign In</h2>
 
-<form id="login" class="login-form" tabindex="-1" method="POST">
 
     <p class="sr">
 
@@ -717,10 +715,8 @@
 
 
 
-    <button type="submit" class="action action-primary action-update js-login login-button">Sign in</button>
+    <a href="/explore_courses" type="submit" class="action action-primary action-update js-login login-button">Sign in</a>
 
-
-</form>
 
 
         </div>

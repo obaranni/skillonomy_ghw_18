@@ -393,40 +393,39 @@
 
 
 
+  <!--<script type="text/template" id="course_card-tpl">-->
+      <!--<article class="course" role="region" aria-label="<%- content.display_name %>">-->
+    <!--<a href="/courses/<%- course %>/about">-->
+        <!--<header class="course-image">-->
+            <!--<div class="cover-image">-->
+                <!--<img src="<%- image_url %>" alt="<%- content.display_name %> <%- content.number %>" />-->
+                <!--<div class="learn-more" aria-hidden="true"><%- gettext("LEARN MORE") %></div>-->
+            <!--</div>-->
+        <!--</header>-->
+        <!--<section class="course-info" aria-hidden="true">-->
+            <!--<h2 class="course-name">-->
+                <!--<span class="course-organization"><%- org %></span>-->
+                <!--<span class="course-code"><%- content.number %></span>-->
+                <!--<span class="course-title"><%- content.display_name %></span>-->
+            <!--</h2>-->
+            <!--<div class="course-date" aria-hidden="true">-->
+                <!--<%- interpolate(-->
+                      <!--gettext("Starts: %(start_date)s"),-->
+                      <!--{ start_date: start }, true-->
+                    <!--) %>-->
+            <!--</div>-->
+        <!--</section>-->
+        <!--<div class="sr">-->
+            <!--<ul>-->
+                <!--<li><%- org %></li>-->
+                <!--<li><%- content.number %></li>-->
+                <!--<li><%- gettext("Starts") %><time itemprop="startDate" datetime="<%- start %>"><%- start %></time></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</a>-->
+<!--</article>-->
 
-  <script type="text/template" id="course_card-tpl">
-      <article class="course" role="region" aria-label="<%- content.display_name %>">
-    <a href="/courses/<%- course %>/about">
-        <header class="course-image">
-            <div class="cover-image">
-                <img src="<%- image_url %>" alt="<%- content.display_name %> <%- content.number %>" />
-                <div class="learn-more" aria-hidden="true"><%- gettext("LEARN MORE") %></div>
-            </div>
-        </header>
-        <section class="course-info" aria-hidden="true">
-            <h2 class="course-name">
-                <span class="course-organization"><%- org %></span>
-                <span class="course-code"><%- content.number %></span>
-                <span class="course-title"><%- content.display_name %></span>
-            </h2>
-            <div class="course-date" aria-hidden="true">
-                <%- interpolate(
-                      gettext("Starts: %(start_date)s"),
-                      { start_date: start }, true
-                    ) %>
-            </div>
-        </section>
-        <div class="sr">
-            <ul>
-                <li><%- org %></li>
-                <li><%- content.number %></li>
-                <li><%- gettext("Starts") %><time itemprop="startDate" datetime="<%- start %>"><%- start %></time></li>
-            </ul>
-        </div>
-    </a>
-</article>
-
-  </script>
+ <!-- </script>-->
   <script type="text/template" id="filter_bar-tpl">
       <div class="filters-inner">
     <ul class="active-filters facet-list"></ul>
@@ -522,12 +521,13 @@
   </div>
 
         <div class="courses" role="region" aria-label="List of Courses">
+            {% for x in courses %}
           <ul class="courses-listing"><li class="courses-listing-item">
       <article class="course" role="region" aria-label="Application Monitoring and Feedback Loops">
-    <a href="https://lms-edeos.raccoongang.com/courses/course-v1:PartnerFY18Q3+DEVOPS200.7x+course/about">
+    <a href="{% static '{{ x }}' %}">
         <header class="course-image">
             <div class="cover-image">
-                <img src="{% static 'courses/asset-v1_PartnerFY18Q3+DEVOPS200.7x+course+type@asset+block@course_image.png' %}" alt="Application Monitoring and Feedback Loops DEVOPS200.7x">
+                <img src={{MEDIA_URL}} {{ x.image }} alt="Application Monitoring and Feedback Loops DEVOPS200.7x">
                 <div class="learn-more" aria-hidden="true">LEARN MORE</div>
             </div>
         </header>
@@ -551,65 +551,10 @@
     </a>
 </article>
 
-  </li><li class="courses-listing-item">
-      <article class="course" role="region" aria-label="Building Interactive Prototypes using JavaScript">
-    <a href="https://lms-edeos.raccoongang.com/courses/course-v1:PartnerFY18Q3+DEV279x+course/about">
-        <header class="course-image">
-            <div class="cover-image">
-                <img src="{% static 'courses/asset-v1_PartnerFY18Q3+DEV279x+course+type@asset+block@course_image.png' %}" alt="Building Interactive Prototypes using JavaScript DEV279x">
-                <div class="learn-more" aria-hidden="true">LEARN MORE</div>
-            </div>
-        </header>
-        <section class="course-info" aria-hidden="true">
-            <h2 class="course-name">
-                <span class="course-organization">PartnerFY18Q3</span>
-                <span class="course-code">DEV279x</span>
-                <span class="course-title">Building Interactive Prototypes using JavaScript</span>
-            </h2>
-            <div class="course-date" aria-hidden="true">
-                Starts: Jan 1, 2016
-            </div>
-        </section>
-        <div class="sr">
-            <ul>
-                <li>PartnerFY18Q3</li>
-                <li>DEV279x</li>
-                <li>Starts<time itemprop="startDate" datetime="Jan 1, 2016">Jan 1, 2016</time></li>
-            </ul>
-        </div>
-    </a>
-</article>
 
-  </li><li class="courses-listing-item">
-      <article class="course" role="region" aria-label="HelloWiZBL">
-    <a href="https://lms-edeos.raccoongang.com/courses/course-v1:WiZBL+CS1011+2018_11_18/about">
-        <header class="course-image">
-            <div class="cover-image">
-                <img src="{% static 'courses/asset-v1_WiZBL+CS1011+2018_11_18+type@asset+block@maxresdefault.jpg' %}" alt="HelloWiZBL CS1011">
-                <div class="learn-more" aria-hidden="true">LEARN MORE</div>
-            </div>
-        </header>
-        <section class="course-info" aria-hidden="true">
-            <h2 class="course-name">
-                <span class="course-organization">WiZBL</span>
-                <span class="course-code">CS1011</span>
-                <span class="course-title">HelloWiZBL</span>
-            </h2>
-            <div class="course-date" aria-hidden="true">
-                Starts: Jan 1, 2018
-            </div>
-        </section>
-        <div class="sr">
-            <ul>
-                <li>WiZBL</li>
-                <li>CS1011</li>
-                <li>Starts<time itemprop="startDate" datetime="Jan 1, 2018">Jan 1, 2018</time></li>
-            </ul>
-        </div>
-    </a>
-</article>
-
-  </li></ul>
+  </li>
+{% endfor %}
+          </ul>
         </div>
 
 

@@ -11,6 +11,11 @@ class Curs(models.Model):
     image = models.ImageField(upload_to="tmp/static/tmp/img", blank=True)
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return "%s" %self.image
+
+
+
 class User(models.Model):
     name = models.CharField(max_length=255)
     login = models.CharField(max_length=255, unique=True)
@@ -19,3 +24,4 @@ class User(models.Model):
     curs = models.ManyToManyField(Curs)
     balance = models.FloatField(default=0, )
     creator = models.CharField(max_length=255, blank=True)
+
