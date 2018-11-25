@@ -14,8 +14,9 @@ class User(models.Model):
     balance = models.FloatField(default=0, )
     creator = models.CharField(max_length=255, blank=True)
 
-class Mentor():
+class Mentor(models.Model):
     name= models.CharField(max_length=255)
+    rating = models.IntegerField()
 
 
 
