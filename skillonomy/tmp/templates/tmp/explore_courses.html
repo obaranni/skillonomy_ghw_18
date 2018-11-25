@@ -527,7 +527,7 @@
     <a href="{% static '{{ x }}' %}">
         <header class="course-image">
             <div class="cover-image">
-                <img src={{MEDIA_URL}} {{ x.image }} alt="Application Monitoring and Feedback Loops DEVOPS200.7x">
+                <img src={% static '{{ x }}' %} alt="Application Monitoring and Feedback Loops DEVOPS200.7x">
                 <div class="learn-more" aria-hidden="true">LEARN MORE</div>
             </div>
         </header>
