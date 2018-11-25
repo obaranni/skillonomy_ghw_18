@@ -8,7 +8,7 @@ class Mentor(models.Model):
 class Curs(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="course/", blank=True)
+    image = models.ImageField(upload_to="tmp/img", blank=True)
     mentor = models.ForeignKey(Mentor, on_delete=models.CASCADE)
 
 class User(models.Model):
